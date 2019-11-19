@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 	srand(uint32_t(QDateTime::currentMSecsSinceEpoch()));
 	neuesRaetsel();
 	
-	setWindowTitle("Rechentrainer für Kinder");
+	setWindowTitle("Rechentrainer für Kinder - V0.0.1");
 	QActionGroup* ag_zahlenraum =  new QActionGroup(this);
 	ag_zahlenraum->addAction(ui->action0_bis_10);
 	ag_zahlenraum->addAction(ui->action0_bis_20);
