@@ -7,13 +7,14 @@ werden hier nicht außer Acht gelassen.
 
 Bei der Multiplikation und Division werden die Operanden auf 0 bis 10 eingeschränkt, evt. jedoch mit Vorzeichen. 
 
-![](screenshots/2019-11-19_001.png)
+![](screenshots/2019-11-19_004.png)
 
 ## Verschiedene Zahlenräume:
-![](screenshots/2019-11-19_002.png)
+![](screenshots/2019-11-19_005.png)
 
-## Mehrere Rechenoperationen auswählbar:
-![](screenshots/2019-11-19_003.png)
+## Mehrere Rechenoperationen sind auswählbar
+Die aktivierten werden zufällig verwendet. 
+![](screenshots/2019-11-19_006.png)
 
 ## TODOs
 * Einstellungen persistent ablegen
