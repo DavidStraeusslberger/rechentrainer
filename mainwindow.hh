@@ -18,7 +18,7 @@ public:
 private:
 	void neuesRaetsel();
 	int zufallszahl(int min, int max);
-	int neuesRechenzeichen();
+	void neuesRechenzeichen();
 	
 private slots:
 

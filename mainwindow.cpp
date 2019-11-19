@@ -11,7 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
 	, ui(new Ui::MainWindow)
 {
 	ui->setupUi(this);
+	srand(uint32_t(QDateTime::currentMSecsSinceEpoch()));
 	neuesRaetsel();
+	
 	setWindowTitle("Rechentrainer für Kinder");
 	QActionGroup* ag_zahlenraum =  new QActionGroup(this);
 	ag_zahlenraum->addAction(ui->action0_bis_10);
@@ -23,8 +25,12 @@ MainWindow::MainWindow(QWidget *parent)
 	ag_zahlenraum->addAction(ui->action_m30_bis_p30);
 	ag_zahlenraum->addAction(ui->action_m100_bis_p100);
 	
-	srand(uint32_t(QDateTime::currentMSecsSinceEpoch()));
-	
+	QActionGroup* ag_operation =  new QActionGroup(this);
+	ag_operation->addAction(ui->actionPlus);
+	ag_operation->addAction(ui->actionMinus);
+	ag_operation->addAction(ui->actionMal);
+	ag_operation->addAction(ui->actionDurch);
+	ag_operation->setExclusive(false);
 }
 
 MainWindow::~MainWindow()
@@ -88,7 +94,7 @@ void MainWindow::neuesRaetsel()
 				}
 				ergebnis = z1*z2;
 			} while (ergebnis > groessteZahl || ergebnis < kleinsteZahl);
-			ui->rechenzeichen->setText("x");
+			ui->rechenzeichen->setText("×");
 		}
 		else if(op == 4){
 			do {
@@ -132,14 +138,8 @@ int MainWindow::zufallszahl(int min, int max)
 	}
 }
 
-int MainWindow::neuesRechenzeichen()
+void MainWindow::neuesRechenzeichen()
 {
-	if(ui->actionPlus->isChecked() == false &&
-			ui->actionMinus->isChecked() == false &&
-			ui->actionMal->isChecked() == false &&
-			ui->actionDurch->isChecked() == false){
-		ui->actionPlus->setChecked(true);
-	}
 	neuesRaetsel();
 }
 
@@ -189,21 +189,45 @@ void MainWindow::on_action0_bis_30_triggered()
 
 void MainWindow::on_actionPlus_triggered()
 {
+	if(ui->actionPlus->isChecked() == false &&
+			ui->actionMinus->isChecked() == false &&
+			ui->actionMal->isChecked() == false &&
+			ui->actionDurch->isChecked() == false){
+		ui->actionPlus->setChecked(true);
+	}
     neuesRechenzeichen();
 }
 
 void MainWindow::on_actionMinus_triggered()
 {
+	if(ui->actionPlus->isChecked() == false &&
+			ui->actionMinus->isChecked() == false &&
+			ui->actionMal->isChecked() == false &&
+			ui->actionDurch->isChecked() == false){
+		ui->actionMinus->setChecked(true);
+	}
     neuesRechenzeichen();
 }
 
 void MainWindow::on_actionMal_triggered()
 {
+	if(ui->actionPlus->isChecked() == false &&
+			ui->actionMinus->isChecked() == false &&
+			ui->actionMal->isChecked() == false &&
+			ui->actionDurch->isChecked() == false){
+		ui->actionMal->setChecked(true);
+	}
     neuesRechenzeichen();
 }
 
 void MainWindow::on_actionDurch_triggered()
 {
+	if(ui->actionPlus->isChecked() == false &&
+			ui->actionMinus->isChecked() == false &&
+			ui->actionMal->isChecked() == false &&
+			ui->actionDurch->isChecked() == false){
+		ui->actionDurch->setChecked(true);
+	}
     neuesRechenzeichen();
 }
 
