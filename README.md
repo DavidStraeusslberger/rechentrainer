@@ -1,7 +1,11 @@
 Rechentrainer für Kinder
 ========================
 
-Dieser Rechentrainer ermöglicht das Erlernen einfacher bis schwieriger Rechenoperationen. Besonders die neutralen Elemente (0 für die Addition/Subraktion und 1 für die Multiplikation/Division) werden hier nicht außer Acht gelassen. 
+Dieser Rechentrainer ermöglicht das Erlernen einfacher bis schwieriger Rechenoperationen. 
+Besonders die neutralen Elemente (0 für die Addition/Subraktion und 1 für die Multiplikation/Division) 
+werden hier nicht außer Acht gelassen. 
+
+Bei der Multiplikation und Division werden die Operanden auf 0 bis 10 eingeschränkt, evt. jedoch mit Vorzeichen. 
 
 ![](screenshots/2019-11-19_001.png)
 
@@ -17,5 +21,3 @@ Dieser Rechentrainer ermöglicht das Erlernen einfacher bis schwieriger Rechenop
 * Statistik in der Statuszeile
 * Wettbewerbsmodus: Auf Zeit mit Highscore
 * breite der Felder für 4 Stellen (100 und Vorzeichen)
-* Verteilung der Zahlen bei Multiplikation und Division verbessern. 
-* Beschränkung auf 10x10 für `Mal` und `Durch`

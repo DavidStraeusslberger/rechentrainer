@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
 	ag_zahlenraum->addAction(ui->action0_bis_10);
 	ag_zahlenraum->addAction(ui->action0_bis_20);
 	ag_zahlenraum->addAction(ui->action0_bis_30);
+	ag_zahlenraum->addAction(ui->action0_bis_100);
 	ag_zahlenraum->addAction(ui->action_m10_bis_p10);
 	ag_zahlenraum->addAction(ui->action_m20_bis_p20);
 	ag_zahlenraum->addAction(ui->action_m30_bis_p30);
@@ -78,16 +79,26 @@ void MainWindow::neuesRaetsel()
 		}
 		else if(op == 3){
 			do {
-				z1 = zufallszahl(kleinsteZahl, groessteZahl);
-				z2 = zufallszahl(kleinsteZahl, groessteZahl);
+				if(kleinsteZahl >= -10){
+					z1 = zufallszahl(kleinsteZahl, 10);
+					z2 = zufallszahl(kleinsteZahl, 10);
+				}else{
+					z1 = zufallszahl(-10, 10);
+					z2 = zufallszahl(-10, 10);
+				}
 				ergebnis = z1*z2;
 			} while (ergebnis > groessteZahl || ergebnis < kleinsteZahl);
 			ui->rechenzeichen->setText("x");
 		}
 		else if(op == 4){
 			do {
-				ergebnis = zufallszahl(kleinsteZahl, groessteZahl);
-				z2 = zufallszahl(kleinsteZahl, groessteZahl);
+				if(kleinsteZahl >= -10){
+					ergebnis = zufallszahl(kleinsteZahl, 10);
+					z2 = zufallszahl(kleinsteZahl, 10);
+				}else{
+					ergebnis = zufallszahl(-10, 10);
+					z2 = zufallszahl(-10, 10);
+				}
 			} while (ergebnis*z2 > groessteZahl || ergebnis*z2 < kleinsteZahl || z2 == 0);
 			z1 = ergebnis*z2;
 			ui->rechenzeichen->setText(":");
@@ -228,4 +239,11 @@ void MainWindow::on_actionAufloesen_triggered()
 {
 	ui->aufloesen->animateClick(200);
     on_aufloesen_clicked();
+}
+
+void MainWindow::on_action0_bis_100_triggered()
+{
+	kleinsteZahl = 0;
+	groessteZahl = 100;
+	neuesRaetsel();
 }

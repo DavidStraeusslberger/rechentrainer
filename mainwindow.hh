@@ -53,6 +53,8 @@ private slots:
 	
 	void on_actionAufloesen_triggered();
 	
+	void on_action0_bis_100_triggered();
+	
 private:
 	Ui::MainWindow *ui;
 	int kleinsteZahl = 0;

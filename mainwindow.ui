@@ -172,6 +172,7 @@
     <addaction name="action0_bis_10"/>
     <addaction name="action0_bis_20"/>
     <addaction name="action0_bis_30"/>
+    <addaction name="action0_bis_100"/>
     <addaction name="action_m10_bis_p10"/>
     <addaction name="action_m20_bis_p20"/>
     <addaction name="action_m30_bis_p30"/>
@@ -306,6 +307,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Return</string>
+   </property>
+  </action>
+  <action name="action0_bis_100">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>0 bis 100</string>
    </property>
   </action>
  </widget>
